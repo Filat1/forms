@@ -13,9 +13,13 @@
           <div class="form-group">
             <label for="email">Mail</label>
             <input type="email" id="email" class="form-control"
-            ngModel name="email"
+            ngModel
+            name="email"
+            #myEmailRef = "ngModel"
             required
             email>
+            <span class="help-block" *ngIf="!myEmailRef.valid && myEmailRef.touched">
+                Please enter a valid email</span>
           </div>
         </div>
         <div class="form-group">
